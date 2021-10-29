@@ -47,15 +47,12 @@ def chat_box(request):
 
 @csrf_exempt
 def login_attempt(request):
-      if request.method == 'POST':
+      if request.method=='POST' and 'signup' in request.POST:
             #Sign UP
             email = request.POST.get('email_s')
             name = request.POST.get('name_s')
             password1 = request.POST.get('password1_s')
             number=request.POST.get('number_s')
-
-         
-            
             check_user = User.objects.filter(email = email).first()
                   
             if check_user :
@@ -72,18 +69,26 @@ def login_attempt(request):
             return render(request,"student_home.html")
             
             #login
-            # elif email_login!="":
-        
-            #       check_user = User.objects.filter(email = email_login).first()
+      elif request.method=='POST' and 'login' in request.POST:
+                  email_login = request.POST.get('email_l')
+                  password = request.POST.get('pswd')
+                  
+                  check_user = User.objects.filter(email = email_login).first()
+                  profile = Profile.objects.filter(email = email_login).first()
+                  print(check_user)
+                  
+                  if check_user!=None :
+                        if password==profile.password:
+                              print(email_login)
+                              user = User.objects.get(id = profile.user.id)
+                              login(request,user)
+                              request.session['email'] = email_login
+                              return render(request,"student_home.html")
+                  else:
+                        context = {'message' : 'User doesnt exists' , 'class' : 'danger' }
+                        return render(request,'login.html' , context)
 
-            #       if check_user :
-            #             context = {'message' : 'User doesnt exists' , 'class' : 'danger' }
-            #             return render(request,'login.html' , context)
 
-            #       elif password==check_user.password:
-            #             login(request,check_user)
-            #       request.session['email'] = email_login
-            #       return render(request,"student_home.html")
 
       return render(request,"login.html")
       

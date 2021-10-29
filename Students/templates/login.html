@@ -33,7 +33,7 @@
 					<input type="text" name="number_s" placeholder="Number +91.." required="">
 			
 
-					<button class="btn btn-primary">Sign up</button>
+					<button name="signup" class="btn btn-primary">Sign up</button>
 				</form>
 			</div>
 
@@ -43,13 +43,13 @@
 					
 					{% if message %}
 					<div class="alert alert-{{class}}">
-						{{message}}
+						{{message_login}}
 					</div>
 					{% endif %}
 
 					<input type="email" name="email_l" placeholder="Email" required="">
 					<input type="text" name="pswd" placeholder="Password" required="">
-					<button class="btn btn-primary">Login</button>
+					<button name="login" class="btn btn-primary">Login</button>
 				</form>
 			</div>
 	</div>
