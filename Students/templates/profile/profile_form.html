@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Profile</title>
+  <link rel="shortcut icon" href="{% static 'assets/images/fav.png'%}" type="image/x-icon" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+    rel="stylesheet" />
+  <link rel="shortcut icon" href="{% static 'all_css/images/fav.jpg'%}" />
+  <link rel="stylesheet" href="{% static 'all_css/css/bootstrap.min.css'%}" />
+  <link rel="stylesheet" href="{% static 'all_css/css/all.min.css'%}" />
+  <link rel="stylesheet" href="{% static 'all_css/css/animate.min.css'%}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'all_css/css/style.css'%}" />
+</head>
+
+<body>
+  <div id="about_us" class="about-us container-fluid">
+    <div class="container">
+      <div class="session-title row">
+        <h2>About Me</h2>
+
+        <div class="heading-line"></div>
+        <br>
+       
+      </div>
+      <div class="about-row row">
+        <div class="image-col col-md-4 mara">
+
+          <div class="profile-pic-div">
+            <img src="{% static 'about/upload_img.png' %}" id="photo">
+            <input type="file" id="file" accept="image/*">
+            <label for="file" id="uploadBtn"></label>
+          </div>
+
+         
+        </div>
+        <div class="detail-col col-md-8">
+          <form action="" class="header-first" method="post">
+            <p class="sizess">
+              <textarea name="quote" id="name10" cols="90" rows="2" placeholder="Your Quote"></textarea>
+            </p>
+            <div class="harsh size">
+              <label for="fname">Name</label>
+              <label for="fname">{{name}}</label> <br>
+              <label for="sub">Your Description</label>
+              <input type="text" name="about_me" id="name1" placeholder="Enter Your Previously Working Firm">
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 col-12">
+                <div class="info-list sizes">
+                  <ul>
+                    <li><span class="bgwhite">Email: &nbsp;</span><span class="bgwhite"> {{email}}</span><br>
+                    </li>
+                    <li><span class="bgwhite">Mobile</span>
+                      <p id="edit"><input type="number" name="number" id="name3" placeholder="Mobile">
+                    </li>
+                    <li><span class="bgwhite">WhatsApp</span><input type="whatsapp" name="whatsapp" id="name4"
+                        placeholder="whatsapp"></li>
+                    <li><span class="bgwhite">Address</span><input type="text" name="address" id="name5"
+                        placeholder="address"></li>
+                    <li><span class="bgwhite">ALinkend</span><input type="text" name="linkedin" id="name5"
+                          placeholder="address"></li>
+                    <li><span class="bgwhite">socials</span><input type="text" name="socials" id="name5"
+                            placeholder="address"></li>
+                        
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-12">
+                <div class="info-list sizes">
+                  <ul>
+                    <li><span class="bgwhite">Graduation Year</span>&nbsp;<input type="text" name="graduation_year" id="name6"
+                        placeholder="grd year">
+                    </li>
+                    <li><span class="bgwhite">Designation</span><input type="text" name="designation" id="name7"
+                        placeholder="Designation"></li>
+                    <li><span class="bgwhite">Company</span><input type="email" name="company" id="name8"
+                        placeholder="Mail ID"></li>
+                    <li><span class="bgwhite">Tools and Techonologies working with</span><input type="text" name="tools_and_techonologies" id="name9"
+                        placeholder="Tools">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="center">
+              <button class="btn btn-primary" type="submit" id="submit">
+                Save &nbsp; <i class="fas fa-edit"></i>
+              </button>
+              
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="{% static 'about/index-about.js'%}"></script> -->
+
+</body>
+
+</html>
